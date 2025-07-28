@@ -90,3 +90,12 @@ function Cars() {
           <div className="no-cars">No cars match your search criteria.</div>
         )}
       </div>
+
+       {selectedCar && (
+        <CarDetail car={selectedCar} onClose={handleCloseDetails} />
+      )}
+    </div>
+  );
+}
+
+export default Cars;
