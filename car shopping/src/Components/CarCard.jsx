@@ -31,3 +31,26 @@ function Cars() {
         setLoading(false);
       });
   }, []);
+
+  const handleSearch = (searchTerm) => {
+    const term = searchTerm.toLowerCase();
+    const filtered = cars.filter(car => 
+      car.make.toLowerCase().includes(term) || 
+      car.model.toLowerCase().includes(term) || 
+      car.year.toString().includes(term)
+    );
+    setFilteredCars(filtered);
+  };
+  
+  const handleViewDetails = (car) => {
+    setSelectedCar(car);
+  };
+  
+  const handleCloseDetails = () => {
+    setSelectedCar(null);
+  };
+  
+  if (loading) {
+    return <div className="loading">Loading cars...</div>;
+  }
+  
