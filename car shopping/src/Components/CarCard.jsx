@@ -69,3 +69,10 @@ function Cars() {
       </div>
     );
   }
+
+   return (
+    <div className="cars-page">
+      <div className="cars-header">
+        <h1>Available Cars</h1>
+        <SearchBar onSearch={handleSearch} />
+      </div>
