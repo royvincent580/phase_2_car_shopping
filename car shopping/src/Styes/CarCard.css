@@ -1,0 +1,91 @@
+.cars-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cars-header {
+  margin-bottom: 2rem;
+}
+
+.cars-header h1 {
+  margin-bottom: 1rem;
+}
+
+.cars-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.no-cars {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  grid-column: 1 / -1;
+}
+
+.error-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-container h2 {
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
+
+.error-container p {
+  margin-bottom: 1rem;
+  color: #7f8c8d;
+}
+
+.error-container ol {
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.error-container code {
+  background-color: #f8f9fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.error-container button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.error-container button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .cars-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .cars-container {
+    grid-template-columns: 1fr;
+  }
+}
