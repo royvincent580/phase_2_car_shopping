@@ -76,3 +76,17 @@ function Cars() {
         <h1>Available Cars</h1>
         <SearchBar onSearch={handleSearch} />
       </div>
+
+      <div className="cars-container">
+        {filteredCars.length > 0 ? (
+          filteredCars.map(car => (
+            <CarCard 
+              key={car.id} 
+              car={car} 
+              onViewDetails={handleViewDetails} 
+            />
+          ))
+        ) : (
+          <div className="no-cars">No cars match your search criteria.</div>
+        )}
+      </div>
