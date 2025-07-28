@@ -54,3 +54,18 @@ function Cars() {
     return <div className="loading">Loading cars...</div>;
   }
   
+  if (error) {
+    return (
+      <div className="error-container">
+        <h2>Error Loading Cars</h2>
+        <p>{error}</p>
+        <p>Please make sure to:</p>
+        <ol>
+          <li>Start the JSON server: <code>npm run server</code></li>
+          <li>Verify the server is running on http://localhost:3000</li>
+          <li>Check that db.json exists in the project root</li>
+        </ol>
+        <button onClick={() => window.location.reload()}>Retry</button>
+      </div>
+    );
+  }
