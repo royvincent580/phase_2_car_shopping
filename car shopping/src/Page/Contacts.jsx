@@ -22,7 +22,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    fetch('http://localhost:3000/inquiries', {
+    fetch('https://car-shopping-backend-fkal.onrender.com/inquiries', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
