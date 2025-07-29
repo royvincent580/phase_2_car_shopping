@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../styles/CarDetail.css';
+import '../Styes/CarDetail.css';
 
 function CarDetail({ car, onClose }) {
   const [imageError, setImageError] = useState(false);
@@ -61,7 +61,7 @@ function CarDetail({ car, onClose }) {
       date: new Date().toISOString()
     };
     
-    fetch('http://localhost:3000/inquiries', {
+    fetch('https://car-shopping-backend-fkal.onrender.com/inquiries', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ function CarDetail({ car, onClose }) {
       date: new Date().toISOString()
     };
     
-    fetch('http://localhost:3000/inquiries', {
+    fetch('https://car-shopping-backend-fkal.onrender.com/inquiries', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ function CarDetail({ car, onClose }) {
       status: 'pending'
     };
     
-    fetch('http://localhost:3000/purchases', {
+    fetch('https://car-shopping-backend-fkal.onrender.com/purchases', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

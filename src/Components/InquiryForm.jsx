@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../styles/InquiryForm.css';
+import '../Styes/InquiryForm.css';
 
 function InquiryForm({ car }) {
   const [formData, setFormData] = useState({
@@ -29,7 +29,7 @@ function InquiryForm({ car }) {
       date: new Date().toISOString()
     };
     
-    fetch('http://localhost:3000/inquiries', {
+    fetch('https://car-shopping-backend-fkal.onrender.com/inquiries', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
