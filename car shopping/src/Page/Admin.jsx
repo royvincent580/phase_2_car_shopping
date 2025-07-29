@@ -11,7 +11,7 @@ function Admin() {
   }, []);
 
   const fetchInquiries = () => {
-    fetch('http://localhost:3000/inquiries')
+    fetch('https://car-shopping-backend-fkal.onrender.com/inquiries')
       .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
