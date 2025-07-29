@@ -10,3 +10,17 @@ function SearchBar({ onSearch }) {
     onSearch(searchTerm);
   };
   
+   return (
+    <div className="search-bar">
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search by make, model, or year..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  );
+}
