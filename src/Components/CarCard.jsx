@@ -1,8 +1,13 @@
 import '../Styes/CarCard.css';
 
-function CarCard({ car, onClick }) {
+function CarCard({ car, onClick, onViewDetails }) {
+  const handleClick = () => {
+    if (onClick) onClick(car);
+    if (onViewDetails) onViewDetails(car);
+  };
+  
   return (
-    <div className="car-card" onClick={() => onClick(car)}>
+    <div className="car-card" onClick={handleClick}>
       <img src={car.image} alt={`${car.year} ${car.make} ${car.model}`} />
       <div className="car-info">
         <h3>{car.year} {car.make} {car.model}</h3>
