@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import CarCard from '../components/CarCard';
-import CarDetail from '../components/CarDetail';
-import SearchBar from '../components/SearchBar';
+import CarCard from '../Components/CarCard';
+import CarDetail from '../Components/CarDetail';
+import SearchBar from '../Components/SearchBar';
 import '../styles/Cars.css';
 
 function Cars() {
@@ -12,10 +12,10 @@ function Cars() {
   const [error, setError] = useState(null);
   
   useEffect(() => {
-    fetch('http://localhost:3000/cars')
+    fetch('https://car-shopping-backend-fkal.onrender.com/cars')
       .then(res => {
         if (!res.ok) {
-          throw new Error(HTTP error! status: ${res.status});
+          throw new Error(`HTTP error! status: ${res.status}`);
         }
         return res.json();
       })
