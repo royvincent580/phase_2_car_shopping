@@ -1,0 +1,195 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "make": "Lamborghini",
+      "model": "Aventador",
+      "year": 2021,
+      "price": 45000000,
+      "mileage": 3000,
+      "color": "Orange",
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "description": "Stunning Lamborghini Aventador with V12 engine producing 730 horsepower. Features include scissor doors, carbon fiber monocoque, and advanced aerodynamics.",
+      "image": "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "id": 2,
+      "make": "Ferrari",
+      "model": "488 GTB",
+      "year": 2020,
+      "price": 38000000,
+      "mileage": 5000,
+      "color": "Red",
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "description": "Iconic Ferrari 488 GTB with twin-turbocharged V8 engine. Features include adaptive suspension, F1-inspired aerodynamics, and premium leather interior.",
+      "image": "https://images.pexels.com/photos/337909/pexels-photo-337909.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "id": 3,
+      "make": "Porsche",
+      "model": "911 GT3",
+      "year": 2022,
+      "price": 22000000,
+      "mileage": 2000,
+      "color": "Blue",
+      "fuelType": "Gasoline",
+      "transmission": "Manual",
+      "description": "Track-focused Porsche 911 GT3 with naturally aspirated flat-six engine. Features include rear-wheel steering, carbon ceramic brakes, and racing-inspired interior.",
+      "image": "https://www.top-autos.nl/wp-content/uploads/2023/11/35443699-2.jpg"
+    },
+    {
+      "id": 4,
+      "make": "Aston Martin",
+      "model": "DBS Superleggera",
+      "year": 2021,
+      "price": 35000000,
+      "mileage": 4000,
+      "color": "British Racing Green",
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "description": "Elegant Aston Martin DBS Superleggera with twin-turbo V12 engine. Features include carbon fiber body, hand-stitched leather interior, and adaptive suspension.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a6/2018_Aston_Martin_DBS_Superleggera_V12_Automatic_5.2_Front.jpg"
+    },
+    {
+      "id": 5,
+      "make": "McLaren",
+      "model": "720S",
+      "year": 2020,
+      "price": 32000000,
+      "mileage": 6000,
+      "color": "Orange",
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "description": "Aerodynamic McLaren 720S with twin-turbocharged V8 engine. Features include dihedral doors, active suspension, and carbon fiber monocoque chassis.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/2018_McLaren_720S_V8_S-A_4.0.jpg/1200px-2018_McLaren_720S_V8_S-A_4.0.jpg"
+    },
+    {
+      "id": 6,
+      "make": "Bentley",
+      "model": "Continental GT",
+      "year": 2022,
+      "price": 28000000,
+      "mileage": 3500,
+      "color": "Dark Blue",
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "description": "Luxurious Bentley Continental GT with W12 engine. Features include air suspension, rotating dashboard display, and handcrafted interior with over 10 square meters of wood veneer.",
+      "image": "https://cdn.motor1.com/images/mgl/1ZEEbw/s1/2025-bentley-continental-gt-speed-review-21.jpg"
+    },
+    {
+      "id": 7,
+      "make": "Rolls-Royce",
+      "model": "Ghost",
+      "year": 2021,
+      "price": 42000000,
+      "mileage": 2500,
+      "color": "White",
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "description": "Opulent Rolls-Royce Ghost with twin-turbo V12 engine. Features include planar suspension system, starlight headliner, and whisper-quiet cabin with over 100kg of sound insulation.",
+      "image": "https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "id": 8,
+      "make": "Maserati",
+      "model": "MC20",
+      "year": 2022,
+      "price": 26000000,
+      "mileage": 1500,
+      "color": "Blue",
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "description": "Innovative Maserati MC20 with Nettuno twin-turbo V6 engine. Features include butterfly doors, carbon fiber chassis, and minimalist interior focused on driving experience.",
+      "image": "https://www.cnet.com/a/img/resize/f1810ff221e7a663a50c66ba3b35ad0132ea4250/hub/2022/08/03/6490ff5f-de8d-484e-8a2f-aad4df427223/ogi1-2022-maserati-mc20-006.jpg?auto=webp&fit=crop&height=900&width=1200"
+    },
+    {
+      "id": 9,
+      "make": "Bugatti",
+      "model": "Chiron",
+      "year": 2020,
+      "price": 320000000,
+      "mileage": 1000,
+      "color": "Blue and Black",
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "description": "Extraordinary Bugatti Chiron with quad-turbo W16 engine producing 1500 horsepower. Features include active aerodynamics, specially developed Michelin tires, and telemetry system.",
+      "image": "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "id": 10,
+      "make": "Koenigsegg",
+      "model": "Jesko",
+      "year": 2021,
+      "price": 350000000,
+      "mileage": 500,
+      "color": "Silver",
+      "fuelType": "Gasoline",
+      "transmission": "Automatic",
+      "description": "Hypercar Koenigsegg Jesko with twin-turbo V8 engine producing 1600 horsepower on E85 fuel. Features include 9-speed multi-clutch transmission, active rear wing, and carbon fiber/kevlar construction.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0833%29.jpg/1200px-GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0833%29.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@caryard.com"
+    }
+  ],
+  "inquiries": [
+    {
+      "id": "cfbb",
+      "name": "john doe",
+      "email": "vincentroy580@gmail.com",
+      "subject": "car buy",
+      "message": "new car",
+      "type": "general",
+      "date": "2025-07-24T08:16:16.924Z"
+    },
+    {
+      "id": "29f0",
+      "name": "john doe",
+      "email": "vincentroy580@gmail.com",
+      "phone": "0712166552",
+      "message": "type shit",
+      "preferredDate": "2025-11-02",
+      "preferredTime": "13:00",
+      "carId": 1,
+      "carInfo": "2021 Lamborghini Aventador",
+      "type": "test_drive",
+      "date": "2025-07-25T10:34:12.860Z"
+    }
+  ],
+  "purchases": [
+    {
+      "id": "41b6",
+      "name": "wambui",
+      "email": "vincentroy580@gmail.com",
+      "phone": "0712166552",
+      "paymentMethod": "cash",
+      "address": "010000",
+      "message": "swerve",
+      "carId": 3,
+      "carInfo": "2022 Porsche 911 GT3",
+      "price": 22000000,
+      "date": "2025-07-25T10:36:44.595Z",
+      "status": "pending"
+    },
+    {
+      "id": "fefe",
+      "name": "jane doe",
+      "email": "vincentroy580@gmail.com",
+      "phone": "0712166552",
+      "paymentMethod": "cash",
+      "address": "010000",
+      "message": "blabla",
+      "carId": 2,
+      "carInfo": "2020 Ferrari 488 GTB",
+      "price": 38000000,
+      "date": "2025-07-27T18:24:46.144Z",
+      "status": "pending"
+    }
+  ]
+}
