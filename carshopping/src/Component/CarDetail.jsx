@@ -1,11 +1,4 @@
 import { useState } from 'react';
-import '../styles/CarCard.css';
-
-function CarCard({ car, onViewDetails }) {
-  const [imageError, setImageError] = useState(false);
-  
-  const handleImageError = () => {
-    setImageError(true);mport { useState } from 'react';
 import '../styles/CarDetail.css';
 
 function CarDetail({ car, onClose }) {
@@ -63,12 +56,12 @@ function CarDetail({ car, onClose }) {
     const inquiryData = {
       ...formData,
       carId: car.id,
-      carInfo: ${car.year} ${car.make} ${car.model},
+      carInfo: `${car.year} ${car.make} ${car.model}`,
       type: 'inquiry',
       date: new Date().toISOString()
     };
     
-    fetch('http://localhost:3000/inquiries', {
+    fetch('https://car-shopping-backend-fkal.onrender.com/inquiries', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -100,12 +93,12 @@ function CarDetail({ car, onClose }) {
     const testDriveData = {
       ...formData,
       carId: car.id,
-      carInfo: ${car.year} ${car.make} ${car.model},
+      carInfo: `${car.year} ${car.make} ${car.model}`,
       type: 'test_drive',
       date: new Date().toISOString()
     };
     
-    fetch('http://localhost:3000/inquiries', {
+    fetch('https://car-shopping-backend-fkal.onrender.com/inquiries', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -159,13 +152,13 @@ function CarDetail({ car, onClose }) {
     const purchaseOrder = {
       ...purchaseData,
       carId: car.id,
-      carInfo: ${car.year} ${car.make} ${car.model},
+      carInfo: `${car.year} ${car.make} ${car.model}`,
       price: car.price,
       date: new Date().toISOString(),
       status: 'pending'
     };
     
-    fetch('http://localhost:3000/purchases', {
+    fetch('https://car-shopping-backend-fkal.onrender.com/purchases', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -199,7 +192,7 @@ function CarDetail({ car, onClose }) {
           <div className="car-detail-image">
             <img 
               src={imageError ? 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=800' : car.image} 
-              alt={${car.year} ${car.make} ${car.model}} 
+              alt={`${car.year} ${car.make} ${car.model}`} 
               onError={handleImageError}
             />
           </div>
@@ -298,7 +291,9 @@ function CarDetail({ car, onClose }) {
                   </div>
                   
                   {submitStatus === 'error' && (
-                    <div className="error-message">Failed to submit inquiry. Please try again.</div>
+                    <div className="error-message">
+                      <p>There was an error submitting your inquiry. Please try again.</p>
+                    </div>
                   )}
                 </form>
               )}
@@ -313,17 +308,17 @@ function CarDetail({ car, onClose }) {
               <h3>Schedule Test Drive - {car.year} {car.make} {car.model}</h3>
               {submitStatus === 'testdrive_success' ? (
                 <div className="success-message">
-                  <h4>Test Drive Scheduled!</h4>
+                  <h4>Test Drive Request Submitted Successfully!</h4>
                   <p>We will contact you to confirm your appointment.</p>
                   <button onClick={closeForms} className="close-form-btn">Close</button>
                 </div>
               ) : (
                 <form onSubmit={handleTestDriveSubmit}>
                   <div className="form-group">
-                    <label htmlFor="name">Name *</label>
+                    <label htmlFor="td-name">Name *</label>
                     <input
                       type="text"
-                      id="name"
+                      id="td-name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
@@ -332,10 +327,10 @@ function CarDetail({ car, onClose }) {
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="email">Email *</label>
+                    <label htmlFor="td-email">Email *</label>
                     <input
                       type="email"
-                      id="email"
+                      id="td-email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
@@ -344,10 +339,10 @@ function CarDetail({ car, onClose }) {
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="phone">Phone *</label>
+                    <label htmlFor="td-phone">Phone *</label>
                     <input
                       type="tel"
-                      id="phone"
+                      id="td-phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
@@ -363,41 +358,30 @@ function CarDetail({ car, onClose }) {
                       name="preferredDate"
                       value={formData.preferredDate}
                       onChange={handleInputChange}
-                      min={new Date().toISOString().split('T')[0]}
                       required
                     />
                   </div>
                   
                   <div className="form-group">
                     <label htmlFor="preferredTime">Preferred Time *</label>
-                    <select
+                    <input
+                      type="time"
                       id="preferredTime"
                       name="preferredTime"
                       value={formData.preferredTime}
                       onChange={handleInputChange}
                       required
-                    >
-                      <option value="">Select Time</option>
-                      <option value="09:00">9:00 AM</option>
-                      <option value="10:00">10:00 AM</option>
-                      <option value="11:00">11:00 AM</option>
-                      <option value="12:00">12:00 PM</option>
-                      <option value="13:00">1:00 PM</option>
-                      <option value="14:00">2:00 PM</option>
-                      <option value="15:00">3:00 PM</option>
-                      <option value="16:00">4:00 PM</option>
-                      <option value="17:00">5:00 PM</option>
-                    </select>
+                    />
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="message">Additional Notes</label>
+                    <label htmlFor="td-message">Additional Notes</label>
                     <textarea
-                      id="message"
+                      id="td-message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Any special requirements or questions..."
+                      placeholder="Any specific requirements or questions?"
                     ></textarea>
                   </div>
                   
@@ -407,7 +391,9 @@ function CarDetail({ car, onClose }) {
                   </div>
                   
                   {submitStatus === 'error' && (
-                    <div className="error-message">Failed to schedule test drive. Please try again.</div>
+                    <div className="error-message">
+                      <p>There was an error submitting your request. Please try again.</p>
+                    </div>
                   )}
                 </form>
               )}
@@ -419,21 +405,21 @@ function CarDetail({ car, onClose }) {
         {showPurchaseForm && (
           <div className="form-overlay">
             <div className="form-container">
-              <h3>Purchase {car.year} {car.make} {car.model}</h3>
-              <div className="purchase-price">Total: KSh {car.price.toLocaleString()}</div>
+              <h3>Purchase - {car.year} {car.make} {car.model}</h3>
+              <p className="purchase-price">Price: KSh {car.price.toLocaleString()}</p>
               {submitStatus === 'purchase_success' ? (
                 <div className="success-message">
-                  <h4>Purchase Order Submitted!</h4>
-                  <p>Thank you for your purchase. We will contact you shortly to complete the transaction.</p>
+                  <h4>Purchase Request Submitted Successfully!</h4>
+                  <p>We will contact you to finalize the purchase details.</p>
                   <button onClick={closeForms} className="close-form-btn">Close</button>
                 </div>
               ) : (
                 <form onSubmit={handlePurchaseSubmit}>
                   <div className="form-group">
-                    <label htmlFor="name">Full Name *</label>
+                    <label htmlFor="p-name">Name *</label>
                     <input
                       type="text"
-                      id="name"
+                      id="p-name"
                       name="name"
                       value={purchaseData.name}
                       onChange={handlePurchaseInputChange}
@@ -442,10 +428,10 @@ function CarDetail({ car, onClose }) {
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="email">Email *</label>
+                    <label htmlFor="p-email">Email *</label>
                     <input
                       type="email"
-                      id="email"
+                      id="p-email"
                       name="email"
                       value={purchaseData.email}
                       onChange={handlePurchaseInputChange}
@@ -454,10 +440,10 @@ function CarDetail({ car, onClose }) {
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="phone">Phone *</label>
+                    <label htmlFor="p-phone">Phone *</label>
                     <input
                       type="tel"
-                      id="phone"
+                      id="p-phone"
                       name="phone"
                       value={purchaseData.phone}
                       onChange={handlePurchaseInputChange}
@@ -472,7 +458,7 @@ function CarDetail({ car, onClose }) {
                       name="address"
                       value={purchaseData.address}
                       onChange={handlePurchaseInputChange}
-                      placeholder="Your full address for delivery/pickup"
+                      placeholder="Your full address"
                       required
                     ></textarea>
                   </div>
@@ -489,28 +475,29 @@ function CarDetail({ car, onClose }) {
                       <option value="cash">Cash</option>
                       <option value="bank_transfer">Bank Transfer</option>
                       <option value="financing">Financing</option>
-                      <option value="trade_in">Trade-in + Cash</option>
                     </select>
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="message">Additional Notes</label>
+                    <label htmlFor="p-message">Additional Notes</label>
                     <textarea
-                      id="message"
+                      id="p-message"
                       name="message"
                       value={purchaseData.message}
                       onChange={handlePurchaseInputChange}
-                      placeholder="Any special requests or questions..."
+                      placeholder="Any additional information or requests"
                     ></textarea>
                   </div>
                   
                   <div className="form-actions">
-                    <button type="submit" className="submit-btn purchase-submit">Submit Purchase Order</button>
+                    <button type="submit" className="submit-btn">Submit Purchase Request</button>
                     <button type="button" onClick={closeForms} className="cancel-btn">Cancel</button>
                   </div>
                   
                   {submitStatus === 'error' && (
-                    <div className="error-message">Failed to submit purchase order. Please try again.</div>
+                    <div className="error-message">
+                      <p>There was an error submitting your purchase request. Please try again.</p>
+                    </div>
                   )}
                 </form>
               )}
@@ -523,24 +510,3 @@ function CarDetail({ car, onClose }) {
 }
 
 export default CarDetail;
-  };
-  
-  return (
-    <div className="car-card" onClick={() => onViewDetails(car)}>
-      <img 
-        src={imageError ? 'https://i.pinimg.com/564x/91/87/47/9187472c200a8f78f93599181f4abb99.jpg' : car.image} 
-        alt={${car.year} ${car.make} ${car.model}} 
-        className="car-image" 
-        onError={handleImageError}
-      />
-      <div className="car-info">
-        <h3>{car.year} {car.make} {car.model}</h3>
-        <p className="car-price">KSh {car.price.toLocaleString()}</p>
-        <p className="car-mileage">{car.mileage.toLocaleString()} km</p>
-        <button className="view-details-btn">View Details</button>
-      </div>
-    </div>
-  );
-}
-
-export default CarCard;
