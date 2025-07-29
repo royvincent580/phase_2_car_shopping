@@ -138,7 +138,7 @@ This project was developed by a team of 4 developers:
 3. **Data & API Developer**: API services and state management
 4. **Features & Utilities Developer**: Search functionality and utility functions
 
-## 📱 Responsive Design
+##  Responsive Design
 
 - **Desktop**: Full-featured layout with grid display
 - **Tablet**: Adapted layout with touch-friendly interface
