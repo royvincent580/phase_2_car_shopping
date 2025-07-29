@@ -40,3 +40,17 @@
   text-decoration: none;
   transition: background-color 0.3s;
 }
+
+
+.browse-btn:hover {
+  background-color: #e6b82e;
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
