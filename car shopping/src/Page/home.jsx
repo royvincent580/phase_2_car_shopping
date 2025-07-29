@@ -11,3 +11,23 @@ function Home() {
           <Link to="/cars" className="browse-btn">Browse Cars</Link>
         </div>
       </div>
+
+ <div className="features-section">
+        <div className="feature">
+          <h3>Quality Selection</h3>
+          <p>Hand-picked vehicles that meet our rigorous standards</p>
+        </div>
+        <div className="feature">
+          <h3>Competitive Pricing</h3>
+          <p>Fair market prices on all our inventory</p>
+        </div>
+        <div className="feature">
+          <h3>Financing Options</h3>
+          <p>Flexible financing solutions for all credit situations</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Home;
