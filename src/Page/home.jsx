@@ -7,7 +7,6 @@ function Home() {
         <div className="hero-content">
           <h1>Welcome to Car Yard</h1>
           <p>Your premier destination for luxury vehicles</p>
-          <a href="/cars" className="cta-button">Browse Cars</a>
         </div>
       </section>
       
